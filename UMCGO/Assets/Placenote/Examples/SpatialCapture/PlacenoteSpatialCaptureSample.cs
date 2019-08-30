@@ -65,12 +65,10 @@ public class PlacenoteSpatialCaptureSample : MonoBehaviour, PlacenoteListener {
 					if (completed) {
 						LibPlacenote.Instance.StartSession ();
 						mLabelText.text = "Loaded ID: " + mMapID;
-                        mLabelText.gameObject.transform.parent.GetComponent<Image>().enabled = false;
-                        mLabelText.enabled = false;
 
 					} else if (faulted) {
 						mLabelText.text = "Failed to load ID: " + mMapID;
-                    } else {
+					} else {
 						mLabelText.text = "Downloading " + mMapID + "(" + (percentage * 100).ToString ("F2") + ")";
 					}
 				}
